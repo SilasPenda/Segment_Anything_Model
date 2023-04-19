@@ -30,5 +30,5 @@ python SAM.py --source images/horse.jpg --save output.jpg
 
 Inference on videos
 ```
-python SAM.py --source test_video.mp4 --save output.mp4
+python SAM.py --source vehicles.mp4 --save output.mp4
 ```
