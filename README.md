@@ -1,34 +1,44 @@
-# Segment_Anything_Model
+# Segment-Anything-Model-OpenVINO
 
-Clone this repo & cd into it
+Clone this repo and cd into it
 
-Create and activate virtual environment.
+Create a Virtual environment.
 ```
 python -m venv .venv
-.\.venv\source\activate
 ```
 
-Upgrade pip
+Activate Virtual environment
 ```
-python -m pip install --upgrade pip
+.\.venv\scripts\activate
 ```
 
 Install requirements
 ```
 pip install \
 'git+https://github.com/facebookresearch/segment-anything.git'
-
 pip install -q roboflow supervision
 wget -q \
 'https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth'
+pip install -q "segment_anything" "gradio>=3.25"
+pip install -r openvino_requirements.txt
 ```
 
-Inference on images
+Run inference on images
 ```
-python SAM.py --source images/horse.jpg --save output.jpg
+python SAM.py --source images\truck.jpg --save result.jpg
 ```
 
-Inference on videos
+Run inference on videos
 ```
-python SAM.py --source vehicles.mp4 --save output.mp4
+python SAM.py --source vehicles.mp4 --save result.mp4
+```
+
+Run inference on images using OpenVINO
+```
+python SAM_openvino.py --source images\truck.jpg --save result.jpg
+```
+
+Run inference on videos using OpenVINO
+```
+python SAM_openvino.py --source vehicles.mp4 --save result.mp4
 ```
